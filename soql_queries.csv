@@ -1,0 +1,38 @@
+soql
+"SELECT Name, (SELECT FirstName, LastName FROM Contacts) FROM Account"
+"SELECT Name, Amount FROM Opportunity WHERE Amount > 50000"
+"SELECT Name, Email, CreatedDate FROM Lead WHERE CreatedDate = LAST_N_DAYS:30"
+SELECT SUM(Amount) TotalAmount FROM Opportunity WHERE StageName = 'Closed Won'
+"SELECT Name, (SELECT Id FROM Contacts) FROM Account WHERE Id IN (SELECT AccountId FROM Contact GROUP BY AccountId HAVING COUNT(Id) > 5)"
+"SELECT Id, Subject, Priority FROM Case WHERE Priority = 'High' AND Status = 'Open'"
+"SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL ORDER BY AnnualRevenue DESC LIMIT 5"
+"SELECT Name, (SELECT FirstName, LastName FROM Contacts) FROM Account"
+"SELECT Name, Amount FROM Opportunity WHERE Amount > 50000"
+"SELECT Name, Email, CreatedDate FROM Lead WHERE CreatedDate = LAST_N_DAYS:30"
+SELECT SUM(Amount) TotalAmount FROM Opportunity WHERE StageName = 'Closed Won'
+"SELECT Name, (SELECT Id FROM Contacts) FROM Account WHERE Id IN (SELECT AccountId FROM Contact GROUP BY AccountId HAVING COUNT(Id) > 5)"
+"SELECT Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL ORDER BY AnnualRevenue DESC LIMIT 10"
+"SELECT Name, Email FROM Lead WHERE LeadSource = 'Web'"
+"SELECT Name, (SELECT Name FROM Opportunities) FROM Account WHERE Id IN (SELECT AccountId FROM Opportunity GROUP BY AccountId HAVING COUNT(Id) > 5)"
+"SELECT FirstName, LastName, MailingState FROM Contact WHERE MailingState = 'CA'"
+"SELECT Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL ORDER BY AnnualRevenue DESC LIMIT 5"
+"SELECT Name, CloseDate, Amount FROM Opportunity WHERE IsClosed = TRUE AND CloseDate = LAST_QUARTER"
+SELECT QualifiedApiName FROM EntityDefinition WHERE IsCustomizable = TRUE
+"SELECT FirstName, LastName, Account.Name FROM Contact WHERE Account.Industry = 'Technology'"
+"SELECT CaseNumber, Subject, Account.Name FROM Case WHERE Priority = 'High'"
+"SELECT AccountId, SUM(Amount) TotalAmount FROM Opportunity GROUP BY AccountId"
+"SELECT Name, LastLoginDate FROM User WHERE LastLoginDate < LAST_N_DAYS:30"
+"SELECT Name, (SELECT FirstName, LastName FROM Contacts) FROM Account"
+"SELECT Name, Amount FROM Opportunity WHERE Amount > 50000"
+"SELECT Name, Email, CreatedDate FROM Lead WHERE CreatedDate = LAST_N_DAYS:30"
+SELECT SUM(Amount) TotalAmount FROM Opportunity WHERE StageName = 'Closed Won'
+"SELECT Name, (SELECT Id FROM Contacts) FROM Account WHERE Id IN (SELECT AccountId FROM Contact GROUP BY AccountId HAVING COUNT(Id) > 5)"
+"SELECT Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL ORDER BY AnnualRevenue DESC LIMIT 10"
+"SELECT CaseNumber, Subject, CreatedDate FROM Case WHERE CreatedDate = LAST_WEEK AND IsClosed = FALSE"
+"SELECT Name, (SELECT Name, Amount FROM Opportunities), (SELECT FirstName, LastName FROM Contacts) FROM Account"
+"SELECT AccountId, AVG(Amount) AverageDealSize FROM Opportunity GROUP BY AccountId"
+"SELECT Name, ConvertedDate FROM Lead WHERE IsConverted = TRUE AND ConvertedDate = LAST_MONTH"
+SELECT Name FROM Account WHERE Id NOT IN (SELECT AccountId FROM Contact)
+"SELECT LeadSource, COUNT(Id) TotalLeads FROM Lead GROUP BY LeadSource"
+"SELECT Name, Amount, CloseDate FROM Opportunity WHERE CloseDate = THIS_QUARTER"
+"SELECT Name, Email FROM User WHERE Profile.Name = 'Sales'"

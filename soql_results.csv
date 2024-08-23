@@ -1,0 +1,9 @@
+soql,result
+soql,False
+"SELECT Name, (SELECT FirstName, LastName FROM Contacts) FROM Account",True
+"SELECT Name, Amount FROM Opportunity WHERE Amount > 50000",True
+"SELECT Name, Email, CreatedDate FROM Lead WHERE CreatedDate = LAST_N_DAYS:30",True
+SELECT SUM(Amount) TotalAmount FROM Opportunity WHERE StageName = 'Closed Won',True
+"SELECT Name, (SELECT Id FROM Contacts) FROM Account WHERE Id IN (SELECT AccountId FROM Contact GROUP BY AccountId HAVING COUNT(Id) > 5)",False
+"SELECT Id, Subject, Priority FROM Case WHERE Priority = 'High' AND Status = 'Open'",True
+"SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != NULL ORDER BY AnnualRevenue DESC LIMIT 5",True
