@@ -11,21 +11,33 @@ This repository contains a set of Python scripts for extracting, validating, and
 - Validate query execution and record results
 - Utilize Salesforce authentication and connection management
 
-## File Structure
 
-```
-.
-├── fetch_soql.py
-├── validate_queries.py
-├── utils/
-│   ├── auth.py
-│   ├── connection.py
-│   ├── soql.py
-│   └── time.py
-├── SOQL_samples.md
-├── soql_queries.csv
-└── soql_results.csv
-```
+
+## Structure
+
+- `data/`: Contains raw, processed, and test data
+  - `raw/`: Raw data files
+  - `processed/`: Processed and formatted data ready for fine-tuning
+  - `test/`: Held-out test data for evaluation
+- `src/`: Source code for data processing, fine-tuning, and evaluation
+  - `data_processing/`: Scripts for data preprocessing and validation
+  - `fine_tuning/`: Scripts for running the fine-tuning process
+  - `evaluation/`: Scripts for evaluating your fine-tuned model
+- `notebooks/`: Jupyter notebooks for exploration and analysis
+- `configs/`: Configuration files for fine-tuning jobs
+- `outputs/`: Saved models and logs
+  - `models/`: Saved model information
+  - `logs/`: Training logs and evaluation results
+- `tests/`: Unit tests for your code
+
+## Files
+
+- `.env`: Environment variables (don't commit this!)
+- `requirements.txt`: Project dependencies
+- `README.md`: Project documentation
+- `.gitignore`: Specifies intentionally untracked files to ignore
+
+
 
 ## Setup
 
@@ -267,3 +279,7 @@ Contributions to improve the scripts or add new features are welcome. Please fol
 ## License
 
 This project is licensed under the MIT License.
+# Fine-Tuning Project
+
+This project is structured for fine-tuning machine learning models.
+
